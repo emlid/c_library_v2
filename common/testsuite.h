@@ -9035,13 +9035,11 @@ static void mavlink_test_video_stream_target(uint8_t system_id, uint8_t componen
         uint8_t buffer[MAVLINK_MAX_PACKET_LEN];
         uint16_t i;
     mavlink_video_stream_target_t packet_in = {
-        17235,139,206,17,"FGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVW"
+        17235,139,"DEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTU"
     };
     mavlink_video_stream_target_t packet1, packet2;
         memset(&packet1, 0, sizeof(packet1));
         packet1.port = packet_in.port;
-        packet1.target_system = packet_in.target_system;
-        packet1.target_component = packet_in.target_component;
         packet1.camera_id = packet_in.camera_id;
         
         mav_array_memcpy(packet1.ip, packet_in.ip, sizeof(char)*45);
@@ -9058,12 +9056,12 @@ static void mavlink_test_video_stream_target(uint8_t system_id, uint8_t componen
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 
         memset(&packet2, 0, sizeof(packet2));
-    mavlink_msg_video_stream_target_pack(system_id, component_id, &msg , packet1.target_system , packet1.target_component , packet1.camera_id , packet1.ip , packet1.port );
+    mavlink_msg_video_stream_target_pack(system_id, component_id, &msg , packet1.camera_id , packet1.ip , packet1.port );
     mavlink_msg_video_stream_target_decode(&msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 
         memset(&packet2, 0, sizeof(packet2));
-    mavlink_msg_video_stream_target_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.target_system , packet1.target_component , packet1.camera_id , packet1.ip , packet1.port );
+    mavlink_msg_video_stream_target_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.camera_id , packet1.ip , packet1.port );
     mavlink_msg_video_stream_target_decode(&msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 
@@ -9076,7 +9074,7 @@ static void mavlink_test_video_stream_target(uint8_t system_id, uint8_t componen
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
         
         memset(&packet2, 0, sizeof(packet2));
-    mavlink_msg_video_stream_target_send(MAVLINK_COMM_1 , packet1.target_system , packet1.target_component , packet1.camera_id , packet1.ip , packet1.port );
+    mavlink_msg_video_stream_target_send(MAVLINK_COMM_1 , packet1.camera_id , packet1.ip , packet1.port );
     mavlink_msg_video_stream_target_decode(last_msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 }
@@ -9093,11 +9091,13 @@ static void mavlink_test_set_video_stream_target(uint8_t system_id, uint8_t comp
         uint8_t buffer[MAVLINK_MAX_PACKET_LEN];
         uint16_t i;
     mavlink_set_video_stream_target_t packet_in = {
-        17235,139,"DEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTU"
+        17235,139,206,17,"FGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVW"
     };
     mavlink_set_video_stream_target_t packet1, packet2;
         memset(&packet1, 0, sizeof(packet1));
         packet1.port = packet_in.port;
+        packet1.target_system = packet_in.target_system;
+        packet1.target_component = packet_in.target_component;
         packet1.camera_id = packet_in.camera_id;
         
         mav_array_memcpy(packet1.ip, packet_in.ip, sizeof(char)*45);
@@ -9114,12 +9114,12 @@ static void mavlink_test_set_video_stream_target(uint8_t system_id, uint8_t comp
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 
         memset(&packet2, 0, sizeof(packet2));
-    mavlink_msg_set_video_stream_target_pack(system_id, component_id, &msg , packet1.camera_id , packet1.ip , packet1.port );
+    mavlink_msg_set_video_stream_target_pack(system_id, component_id, &msg , packet1.target_system , packet1.target_component , packet1.camera_id , packet1.ip , packet1.port );
     mavlink_msg_set_video_stream_target_decode(&msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 
         memset(&packet2, 0, sizeof(packet2));
-    mavlink_msg_set_video_stream_target_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.camera_id , packet1.ip , packet1.port );
+    mavlink_msg_set_video_stream_target_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.target_system , packet1.target_component , packet1.camera_id , packet1.ip , packet1.port );
     mavlink_msg_set_video_stream_target_decode(&msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 
@@ -9132,7 +9132,7 @@ static void mavlink_test_set_video_stream_target(uint8_t system_id, uint8_t comp
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
         
         memset(&packet2, 0, sizeof(packet2));
-    mavlink_msg_set_video_stream_target_send(MAVLINK_COMM_1 , packet1.camera_id , packet1.ip , packet1.port );
+    mavlink_msg_set_video_stream_target_send(MAVLINK_COMM_1 , packet1.target_system , packet1.target_component , packet1.camera_id , packet1.ip , packet1.port );
     mavlink_msg_set_video_stream_target_decode(last_msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 }
