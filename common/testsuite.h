@@ -8620,14 +8620,14 @@ static void mavlink_test_camera_capture_status(uint8_t system_id, uint8_t compon
         uint8_t buffer[MAVLINK_MAX_PACKET_LEN];
         uint16_t i;
     mavlink_camera_capture_status_t packet_in = {
-        93372036854775807ULL,963497880,101.0,129.0,18275,18379,18483,18587,18691,223,34,101
+        963497464,45.0,73.0,963498088,18067,18171,18275,18379,18483,211,22,89
     };
     mavlink_camera_capture_status_t packet1, packet2;
         memset(&packet1, 0, sizeof(packet1));
-        packet1.video_bitrate = packet_in.video_bitrate;
         packet1.time_boot_ms = packet_in.time_boot_ms;
         packet1.image_interval = packet_in.image_interval;
         packet1.video_framerate = packet_in.video_framerate;
+        packet1.video_bitrate = packet_in.video_bitrate;
         packet1.image_resolution_h = packet_in.image_resolution_h;
         packet1.image_resolution_v = packet_in.image_resolution_v;
         packet1.video_resolution_h = packet_in.video_resolution_h;

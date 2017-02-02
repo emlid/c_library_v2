@@ -5,10 +5,10 @@
 
 MAVPACKED(
 typedef struct __mavlink_camera_capture_status_t {
- uint64_t video_bitrate; /*< Video bit rate in bits per second*/
  uint32_t time_boot_ms; /*< Timestamp (milliseconds since system boot)*/
  float image_interval; /*< Image capture interval in seconds*/
  float video_framerate; /*< Video frame rate in Hz*/
+ uint32_t video_bitrate; /*< Video bit rate in bits per second*/
  uint16_t image_resolution_h; /*< Image resolution in pixels horizontal*/
  uint16_t image_resolution_v; /*< Image resolution in pixels vertical*/
  uint16_t video_resolution_h; /*< Video resolution in pixels horizontal*/
@@ -19,13 +19,13 @@ typedef struct __mavlink_camera_capture_status_t {
  uint8_t video_status; /*< Current status of video capturing (0: not running, 1: capture in progress)*/
 }) mavlink_camera_capture_status_t;
 
-#define MAVLINK_MSG_ID_CAMERA_CAPTURE_STATUS_LEN 33
-#define MAVLINK_MSG_ID_CAMERA_CAPTURE_STATUS_MIN_LEN 33
-#define MAVLINK_MSG_ID_262_LEN 33
-#define MAVLINK_MSG_ID_262_MIN_LEN 33
+#define MAVLINK_MSG_ID_CAMERA_CAPTURE_STATUS_LEN 29
+#define MAVLINK_MSG_ID_CAMERA_CAPTURE_STATUS_MIN_LEN 29
+#define MAVLINK_MSG_ID_262_LEN 29
+#define MAVLINK_MSG_ID_262_MIN_LEN 29
 
-#define MAVLINK_MSG_ID_CAMERA_CAPTURE_STATUS_CRC 150
-#define MAVLINK_MSG_ID_262_CRC 150
+#define MAVLINK_MSG_ID_CAMERA_CAPTURE_STATUS_CRC 198
+#define MAVLINK_MSG_ID_262_CRC 198
 
 
 
@@ -34,36 +34,36 @@ typedef struct __mavlink_camera_capture_status_t {
     262, \
     "CAMERA_CAPTURE_STATUS", \
     12, \
-    {  { "video_bitrate", NULL, MAVLINK_TYPE_UINT64_T, 0, 0, offsetof(mavlink_camera_capture_status_t, video_bitrate) }, \
-         { "time_boot_ms", NULL, MAVLINK_TYPE_UINT32_T, 0, 8, offsetof(mavlink_camera_capture_status_t, time_boot_ms) }, \
-         { "image_interval", NULL, MAVLINK_TYPE_FLOAT, 0, 12, offsetof(mavlink_camera_capture_status_t, image_interval) }, \
-         { "video_framerate", NULL, MAVLINK_TYPE_FLOAT, 0, 16, offsetof(mavlink_camera_capture_status_t, video_framerate) }, \
-         { "image_resolution_h", NULL, MAVLINK_TYPE_UINT16_T, 0, 20, offsetof(mavlink_camera_capture_status_t, image_resolution_h) }, \
-         { "image_resolution_v", NULL, MAVLINK_TYPE_UINT16_T, 0, 22, offsetof(mavlink_camera_capture_status_t, image_resolution_v) }, \
-         { "video_resolution_h", NULL, MAVLINK_TYPE_UINT16_T, 0, 24, offsetof(mavlink_camera_capture_status_t, video_resolution_h) }, \
-         { "video_resolution_v", NULL, MAVLINK_TYPE_UINT16_T, 0, 26, offsetof(mavlink_camera_capture_status_t, video_resolution_v) }, \
-         { "video_rotation", NULL, MAVLINK_TYPE_UINT16_T, 0, 28, offsetof(mavlink_camera_capture_status_t, video_rotation) }, \
-         { "camera_id", NULL, MAVLINK_TYPE_UINT8_T, 0, 30, offsetof(mavlink_camera_capture_status_t, camera_id) }, \
-         { "image_status", NULL, MAVLINK_TYPE_UINT8_T, 0, 31, offsetof(mavlink_camera_capture_status_t, image_status) }, \
-         { "video_status", NULL, MAVLINK_TYPE_UINT8_T, 0, 32, offsetof(mavlink_camera_capture_status_t, video_status) }, \
+    {  { "time_boot_ms", NULL, MAVLINK_TYPE_UINT32_T, 0, 0, offsetof(mavlink_camera_capture_status_t, time_boot_ms) }, \
+         { "image_interval", NULL, MAVLINK_TYPE_FLOAT, 0, 4, offsetof(mavlink_camera_capture_status_t, image_interval) }, \
+         { "video_framerate", NULL, MAVLINK_TYPE_FLOAT, 0, 8, offsetof(mavlink_camera_capture_status_t, video_framerate) }, \
+         { "video_bitrate", NULL, MAVLINK_TYPE_UINT32_T, 0, 12, offsetof(mavlink_camera_capture_status_t, video_bitrate) }, \
+         { "image_resolution_h", NULL, MAVLINK_TYPE_UINT16_T, 0, 16, offsetof(mavlink_camera_capture_status_t, image_resolution_h) }, \
+         { "image_resolution_v", NULL, MAVLINK_TYPE_UINT16_T, 0, 18, offsetof(mavlink_camera_capture_status_t, image_resolution_v) }, \
+         { "video_resolution_h", NULL, MAVLINK_TYPE_UINT16_T, 0, 20, offsetof(mavlink_camera_capture_status_t, video_resolution_h) }, \
+         { "video_resolution_v", NULL, MAVLINK_TYPE_UINT16_T, 0, 22, offsetof(mavlink_camera_capture_status_t, video_resolution_v) }, \
+         { "video_rotation", NULL, MAVLINK_TYPE_UINT16_T, 0, 24, offsetof(mavlink_camera_capture_status_t, video_rotation) }, \
+         { "camera_id", NULL, MAVLINK_TYPE_UINT8_T, 0, 26, offsetof(mavlink_camera_capture_status_t, camera_id) }, \
+         { "image_status", NULL, MAVLINK_TYPE_UINT8_T, 0, 27, offsetof(mavlink_camera_capture_status_t, image_status) }, \
+         { "video_status", NULL, MAVLINK_TYPE_UINT8_T, 0, 28, offsetof(mavlink_camera_capture_status_t, video_status) }, \
          } \
 }
 #else
 #define MAVLINK_MESSAGE_INFO_CAMERA_CAPTURE_STATUS { \
     "CAMERA_CAPTURE_STATUS", \
     12, \
-    {  { "video_bitrate", NULL, MAVLINK_TYPE_UINT64_T, 0, 0, offsetof(mavlink_camera_capture_status_t, video_bitrate) }, \
-         { "time_boot_ms", NULL, MAVLINK_TYPE_UINT32_T, 0, 8, offsetof(mavlink_camera_capture_status_t, time_boot_ms) }, \
-         { "image_interval", NULL, MAVLINK_TYPE_FLOAT, 0, 12, offsetof(mavlink_camera_capture_status_t, image_interval) }, \
-         { "video_framerate", NULL, MAVLINK_TYPE_FLOAT, 0, 16, offsetof(mavlink_camera_capture_status_t, video_framerate) }, \
-         { "image_resolution_h", NULL, MAVLINK_TYPE_UINT16_T, 0, 20, offsetof(mavlink_camera_capture_status_t, image_resolution_h) }, \
-         { "image_resolution_v", NULL, MAVLINK_TYPE_UINT16_T, 0, 22, offsetof(mavlink_camera_capture_status_t, image_resolution_v) }, \
-         { "video_resolution_h", NULL, MAVLINK_TYPE_UINT16_T, 0, 24, offsetof(mavlink_camera_capture_status_t, video_resolution_h) }, \
-         { "video_resolution_v", NULL, MAVLINK_TYPE_UINT16_T, 0, 26, offsetof(mavlink_camera_capture_status_t, video_resolution_v) }, \
-         { "video_rotation", NULL, MAVLINK_TYPE_UINT16_T, 0, 28, offsetof(mavlink_camera_capture_status_t, video_rotation) }, \
-         { "camera_id", NULL, MAVLINK_TYPE_UINT8_T, 0, 30, offsetof(mavlink_camera_capture_status_t, camera_id) }, \
-         { "image_status", NULL, MAVLINK_TYPE_UINT8_T, 0, 31, offsetof(mavlink_camera_capture_status_t, image_status) }, \
-         { "video_status", NULL, MAVLINK_TYPE_UINT8_T, 0, 32, offsetof(mavlink_camera_capture_status_t, video_status) }, \
+    {  { "time_boot_ms", NULL, MAVLINK_TYPE_UINT32_T, 0, 0, offsetof(mavlink_camera_capture_status_t, time_boot_ms) }, \
+         { "image_interval", NULL, MAVLINK_TYPE_FLOAT, 0, 4, offsetof(mavlink_camera_capture_status_t, image_interval) }, \
+         { "video_framerate", NULL, MAVLINK_TYPE_FLOAT, 0, 8, offsetof(mavlink_camera_capture_status_t, video_framerate) }, \
+         { "video_bitrate", NULL, MAVLINK_TYPE_UINT32_T, 0, 12, offsetof(mavlink_camera_capture_status_t, video_bitrate) }, \
+         { "image_resolution_h", NULL, MAVLINK_TYPE_UINT16_T, 0, 16, offsetof(mavlink_camera_capture_status_t, image_resolution_h) }, \
+         { "image_resolution_v", NULL, MAVLINK_TYPE_UINT16_T, 0, 18, offsetof(mavlink_camera_capture_status_t, image_resolution_v) }, \
+         { "video_resolution_h", NULL, MAVLINK_TYPE_UINT16_T, 0, 20, offsetof(mavlink_camera_capture_status_t, video_resolution_h) }, \
+         { "video_resolution_v", NULL, MAVLINK_TYPE_UINT16_T, 0, 22, offsetof(mavlink_camera_capture_status_t, video_resolution_v) }, \
+         { "video_rotation", NULL, MAVLINK_TYPE_UINT16_T, 0, 24, offsetof(mavlink_camera_capture_status_t, video_rotation) }, \
+         { "camera_id", NULL, MAVLINK_TYPE_UINT8_T, 0, 26, offsetof(mavlink_camera_capture_status_t, camera_id) }, \
+         { "image_status", NULL, MAVLINK_TYPE_UINT8_T, 0, 27, offsetof(mavlink_camera_capture_status_t, image_status) }, \
+         { "video_status", NULL, MAVLINK_TYPE_UINT8_T, 0, 28, offsetof(mavlink_camera_capture_status_t, video_status) }, \
          } \
 }
 #endif
@@ -89,30 +89,30 @@ typedef struct __mavlink_camera_capture_status_t {
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_camera_capture_status_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
-                               uint32_t time_boot_ms, uint8_t camera_id, uint8_t image_status, uint8_t video_status, float image_interval, float video_framerate, uint16_t image_resolution_h, uint16_t image_resolution_v, uint16_t video_resolution_h, uint16_t video_resolution_v, uint64_t video_bitrate, uint16_t video_rotation)
+                               uint32_t time_boot_ms, uint8_t camera_id, uint8_t image_status, uint8_t video_status, float image_interval, float video_framerate, uint16_t image_resolution_h, uint16_t image_resolution_v, uint16_t video_resolution_h, uint16_t video_resolution_v, uint32_t video_bitrate, uint16_t video_rotation)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
     char buf[MAVLINK_MSG_ID_CAMERA_CAPTURE_STATUS_LEN];
-    _mav_put_uint64_t(buf, 0, video_bitrate);
-    _mav_put_uint32_t(buf, 8, time_boot_ms);
-    _mav_put_float(buf, 12, image_interval);
-    _mav_put_float(buf, 16, video_framerate);
-    _mav_put_uint16_t(buf, 20, image_resolution_h);
-    _mav_put_uint16_t(buf, 22, image_resolution_v);
-    _mav_put_uint16_t(buf, 24, video_resolution_h);
-    _mav_put_uint16_t(buf, 26, video_resolution_v);
-    _mav_put_uint16_t(buf, 28, video_rotation);
-    _mav_put_uint8_t(buf, 30, camera_id);
-    _mav_put_uint8_t(buf, 31, image_status);
-    _mav_put_uint8_t(buf, 32, video_status);
+    _mav_put_uint32_t(buf, 0, time_boot_ms);
+    _mav_put_float(buf, 4, image_interval);
+    _mav_put_float(buf, 8, video_framerate);
+    _mav_put_uint32_t(buf, 12, video_bitrate);
+    _mav_put_uint16_t(buf, 16, image_resolution_h);
+    _mav_put_uint16_t(buf, 18, image_resolution_v);
+    _mav_put_uint16_t(buf, 20, video_resolution_h);
+    _mav_put_uint16_t(buf, 22, video_resolution_v);
+    _mav_put_uint16_t(buf, 24, video_rotation);
+    _mav_put_uint8_t(buf, 26, camera_id);
+    _mav_put_uint8_t(buf, 27, image_status);
+    _mav_put_uint8_t(buf, 28, video_status);
 
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), buf, MAVLINK_MSG_ID_CAMERA_CAPTURE_STATUS_LEN);
 #else
     mavlink_camera_capture_status_t packet;
-    packet.video_bitrate = video_bitrate;
     packet.time_boot_ms = time_boot_ms;
     packet.image_interval = image_interval;
     packet.video_framerate = video_framerate;
+    packet.video_bitrate = video_bitrate;
     packet.image_resolution_h = image_resolution_h;
     packet.image_resolution_v = image_resolution_v;
     packet.video_resolution_h = video_resolution_h;
@@ -151,30 +151,30 @@ static inline uint16_t mavlink_msg_camera_capture_status_pack(uint8_t system_id,
  */
 static inline uint16_t mavlink_msg_camera_capture_status_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
                                mavlink_message_t* msg,
-                                   uint32_t time_boot_ms,uint8_t camera_id,uint8_t image_status,uint8_t video_status,float image_interval,float video_framerate,uint16_t image_resolution_h,uint16_t image_resolution_v,uint16_t video_resolution_h,uint16_t video_resolution_v,uint64_t video_bitrate,uint16_t video_rotation)
+                                   uint32_t time_boot_ms,uint8_t camera_id,uint8_t image_status,uint8_t video_status,float image_interval,float video_framerate,uint16_t image_resolution_h,uint16_t image_resolution_v,uint16_t video_resolution_h,uint16_t video_resolution_v,uint32_t video_bitrate,uint16_t video_rotation)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
     char buf[MAVLINK_MSG_ID_CAMERA_CAPTURE_STATUS_LEN];
-    _mav_put_uint64_t(buf, 0, video_bitrate);
-    _mav_put_uint32_t(buf, 8, time_boot_ms);
-    _mav_put_float(buf, 12, image_interval);
-    _mav_put_float(buf, 16, video_framerate);
-    _mav_put_uint16_t(buf, 20, image_resolution_h);
-    _mav_put_uint16_t(buf, 22, image_resolution_v);
-    _mav_put_uint16_t(buf, 24, video_resolution_h);
-    _mav_put_uint16_t(buf, 26, video_resolution_v);
-    _mav_put_uint16_t(buf, 28, video_rotation);
-    _mav_put_uint8_t(buf, 30, camera_id);
-    _mav_put_uint8_t(buf, 31, image_status);
-    _mav_put_uint8_t(buf, 32, video_status);
+    _mav_put_uint32_t(buf, 0, time_boot_ms);
+    _mav_put_float(buf, 4, image_interval);
+    _mav_put_float(buf, 8, video_framerate);
+    _mav_put_uint32_t(buf, 12, video_bitrate);
+    _mav_put_uint16_t(buf, 16, image_resolution_h);
+    _mav_put_uint16_t(buf, 18, image_resolution_v);
+    _mav_put_uint16_t(buf, 20, video_resolution_h);
+    _mav_put_uint16_t(buf, 22, video_resolution_v);
+    _mav_put_uint16_t(buf, 24, video_rotation);
+    _mav_put_uint8_t(buf, 26, camera_id);
+    _mav_put_uint8_t(buf, 27, image_status);
+    _mav_put_uint8_t(buf, 28, video_status);
 
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), buf, MAVLINK_MSG_ID_CAMERA_CAPTURE_STATUS_LEN);
 #else
     mavlink_camera_capture_status_t packet;
-    packet.video_bitrate = video_bitrate;
     packet.time_boot_ms = time_boot_ms;
     packet.image_interval = image_interval;
     packet.video_framerate = video_framerate;
+    packet.video_bitrate = video_bitrate;
     packet.image_resolution_h = image_resolution_h;
     packet.image_resolution_v = image_resolution_v;
     packet.video_resolution_h = video_resolution_h;
@@ -237,30 +237,30 @@ static inline uint16_t mavlink_msg_camera_capture_status_encode_chan(uint8_t sys
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
-static inline void mavlink_msg_camera_capture_status_send(mavlink_channel_t chan, uint32_t time_boot_ms, uint8_t camera_id, uint8_t image_status, uint8_t video_status, float image_interval, float video_framerate, uint16_t image_resolution_h, uint16_t image_resolution_v, uint16_t video_resolution_h, uint16_t video_resolution_v, uint64_t video_bitrate, uint16_t video_rotation)
+static inline void mavlink_msg_camera_capture_status_send(mavlink_channel_t chan, uint32_t time_boot_ms, uint8_t camera_id, uint8_t image_status, uint8_t video_status, float image_interval, float video_framerate, uint16_t image_resolution_h, uint16_t image_resolution_v, uint16_t video_resolution_h, uint16_t video_resolution_v, uint32_t video_bitrate, uint16_t video_rotation)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
     char buf[MAVLINK_MSG_ID_CAMERA_CAPTURE_STATUS_LEN];
-    _mav_put_uint64_t(buf, 0, video_bitrate);
-    _mav_put_uint32_t(buf, 8, time_boot_ms);
-    _mav_put_float(buf, 12, image_interval);
-    _mav_put_float(buf, 16, video_framerate);
-    _mav_put_uint16_t(buf, 20, image_resolution_h);
-    _mav_put_uint16_t(buf, 22, image_resolution_v);
-    _mav_put_uint16_t(buf, 24, video_resolution_h);
-    _mav_put_uint16_t(buf, 26, video_resolution_v);
-    _mav_put_uint16_t(buf, 28, video_rotation);
-    _mav_put_uint8_t(buf, 30, camera_id);
-    _mav_put_uint8_t(buf, 31, image_status);
-    _mav_put_uint8_t(buf, 32, video_status);
+    _mav_put_uint32_t(buf, 0, time_boot_ms);
+    _mav_put_float(buf, 4, image_interval);
+    _mav_put_float(buf, 8, video_framerate);
+    _mav_put_uint32_t(buf, 12, video_bitrate);
+    _mav_put_uint16_t(buf, 16, image_resolution_h);
+    _mav_put_uint16_t(buf, 18, image_resolution_v);
+    _mav_put_uint16_t(buf, 20, video_resolution_h);
+    _mav_put_uint16_t(buf, 22, video_resolution_v);
+    _mav_put_uint16_t(buf, 24, video_rotation);
+    _mav_put_uint8_t(buf, 26, camera_id);
+    _mav_put_uint8_t(buf, 27, image_status);
+    _mav_put_uint8_t(buf, 28, video_status);
 
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_CAMERA_CAPTURE_STATUS, buf, MAVLINK_MSG_ID_CAMERA_CAPTURE_STATUS_MIN_LEN, MAVLINK_MSG_ID_CAMERA_CAPTURE_STATUS_LEN, MAVLINK_MSG_ID_CAMERA_CAPTURE_STATUS_CRC);
 #else
     mavlink_camera_capture_status_t packet;
-    packet.video_bitrate = video_bitrate;
     packet.time_boot_ms = time_boot_ms;
     packet.image_interval = image_interval;
     packet.video_framerate = video_framerate;
+    packet.video_bitrate = video_bitrate;
     packet.image_resolution_h = image_resolution_h;
     packet.image_resolution_v = image_resolution_v;
     packet.video_resolution_h = video_resolution_h;
@@ -296,30 +296,30 @@ static inline void mavlink_msg_camera_capture_status_send_struct(mavlink_channel
   is usually the receive buffer for the channel, and allows a reply to an
   incoming message with minimum stack space usage.
  */
-static inline void mavlink_msg_camera_capture_status_send_buf(mavlink_message_t *msgbuf, mavlink_channel_t chan,  uint32_t time_boot_ms, uint8_t camera_id, uint8_t image_status, uint8_t video_status, float image_interval, float video_framerate, uint16_t image_resolution_h, uint16_t image_resolution_v, uint16_t video_resolution_h, uint16_t video_resolution_v, uint64_t video_bitrate, uint16_t video_rotation)
+static inline void mavlink_msg_camera_capture_status_send_buf(mavlink_message_t *msgbuf, mavlink_channel_t chan,  uint32_t time_boot_ms, uint8_t camera_id, uint8_t image_status, uint8_t video_status, float image_interval, float video_framerate, uint16_t image_resolution_h, uint16_t image_resolution_v, uint16_t video_resolution_h, uint16_t video_resolution_v, uint32_t video_bitrate, uint16_t video_rotation)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
     char *buf = (char *)msgbuf;
-    _mav_put_uint64_t(buf, 0, video_bitrate);
-    _mav_put_uint32_t(buf, 8, time_boot_ms);
-    _mav_put_float(buf, 12, image_interval);
-    _mav_put_float(buf, 16, video_framerate);
-    _mav_put_uint16_t(buf, 20, image_resolution_h);
-    _mav_put_uint16_t(buf, 22, image_resolution_v);
-    _mav_put_uint16_t(buf, 24, video_resolution_h);
-    _mav_put_uint16_t(buf, 26, video_resolution_v);
-    _mav_put_uint16_t(buf, 28, video_rotation);
-    _mav_put_uint8_t(buf, 30, camera_id);
-    _mav_put_uint8_t(buf, 31, image_status);
-    _mav_put_uint8_t(buf, 32, video_status);
+    _mav_put_uint32_t(buf, 0, time_boot_ms);
+    _mav_put_float(buf, 4, image_interval);
+    _mav_put_float(buf, 8, video_framerate);
+    _mav_put_uint32_t(buf, 12, video_bitrate);
+    _mav_put_uint16_t(buf, 16, image_resolution_h);
+    _mav_put_uint16_t(buf, 18, image_resolution_v);
+    _mav_put_uint16_t(buf, 20, video_resolution_h);
+    _mav_put_uint16_t(buf, 22, video_resolution_v);
+    _mav_put_uint16_t(buf, 24, video_rotation);
+    _mav_put_uint8_t(buf, 26, camera_id);
+    _mav_put_uint8_t(buf, 27, image_status);
+    _mav_put_uint8_t(buf, 28, video_status);
 
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_CAMERA_CAPTURE_STATUS, buf, MAVLINK_MSG_ID_CAMERA_CAPTURE_STATUS_MIN_LEN, MAVLINK_MSG_ID_CAMERA_CAPTURE_STATUS_LEN, MAVLINK_MSG_ID_CAMERA_CAPTURE_STATUS_CRC);
 #else
     mavlink_camera_capture_status_t *packet = (mavlink_camera_capture_status_t *)msgbuf;
-    packet->video_bitrate = video_bitrate;
     packet->time_boot_ms = time_boot_ms;
     packet->image_interval = image_interval;
     packet->video_framerate = video_framerate;
+    packet->video_bitrate = video_bitrate;
     packet->image_resolution_h = image_resolution_h;
     packet->image_resolution_v = image_resolution_v;
     packet->video_resolution_h = video_resolution_h;
@@ -346,7 +346,7 @@ static inline void mavlink_msg_camera_capture_status_send_buf(mavlink_message_t 
  */
 static inline uint32_t mavlink_msg_camera_capture_status_get_time_boot_ms(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  8);
+    return _MAV_RETURN_uint32_t(msg,  0);
 }
 
 /**
@@ -356,7 +356,7 @@ static inline uint32_t mavlink_msg_camera_capture_status_get_time_boot_ms(const 
  */
 static inline uint8_t mavlink_msg_camera_capture_status_get_camera_id(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  30);
+    return _MAV_RETURN_uint8_t(msg,  26);
 }
 
 /**
@@ -366,7 +366,7 @@ static inline uint8_t mavlink_msg_camera_capture_status_get_camera_id(const mavl
  */
 static inline uint8_t mavlink_msg_camera_capture_status_get_image_status(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  31);
+    return _MAV_RETURN_uint8_t(msg,  27);
 }
 
 /**
@@ -376,7 +376,7 @@ static inline uint8_t mavlink_msg_camera_capture_status_get_image_status(const m
  */
 static inline uint8_t mavlink_msg_camera_capture_status_get_video_status(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint8_t(msg,  32);
+    return _MAV_RETURN_uint8_t(msg,  28);
 }
 
 /**
@@ -386,7 +386,7 @@ static inline uint8_t mavlink_msg_camera_capture_status_get_video_status(const m
  */
 static inline float mavlink_msg_camera_capture_status_get_image_interval(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  12);
+    return _MAV_RETURN_float(msg,  4);
 }
 
 /**
@@ -396,7 +396,7 @@ static inline float mavlink_msg_camera_capture_status_get_image_interval(const m
  */
 static inline float mavlink_msg_camera_capture_status_get_video_framerate(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_float(msg,  16);
+    return _MAV_RETURN_float(msg,  8);
 }
 
 /**
@@ -406,7 +406,7 @@ static inline float mavlink_msg_camera_capture_status_get_video_framerate(const 
  */
 static inline uint16_t mavlink_msg_camera_capture_status_get_image_resolution_h(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  20);
+    return _MAV_RETURN_uint16_t(msg,  16);
 }
 
 /**
@@ -416,7 +416,7 @@ static inline uint16_t mavlink_msg_camera_capture_status_get_image_resolution_h(
  */
 static inline uint16_t mavlink_msg_camera_capture_status_get_image_resolution_v(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  22);
+    return _MAV_RETURN_uint16_t(msg,  18);
 }
 
 /**
@@ -426,7 +426,7 @@ static inline uint16_t mavlink_msg_camera_capture_status_get_image_resolution_v(
  */
 static inline uint16_t mavlink_msg_camera_capture_status_get_video_resolution_h(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  24);
+    return _MAV_RETURN_uint16_t(msg,  20);
 }
 
 /**
@@ -436,7 +436,7 @@ static inline uint16_t mavlink_msg_camera_capture_status_get_video_resolution_h(
  */
 static inline uint16_t mavlink_msg_camera_capture_status_get_video_resolution_v(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  26);
+    return _MAV_RETURN_uint16_t(msg,  22);
 }
 
 /**
@@ -444,9 +444,9 @@ static inline uint16_t mavlink_msg_camera_capture_status_get_video_resolution_v(
  *
  * @return Video bit rate in bits per second
  */
-static inline uint64_t mavlink_msg_camera_capture_status_get_video_bitrate(const mavlink_message_t* msg)
+static inline uint32_t mavlink_msg_camera_capture_status_get_video_bitrate(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint64_t(msg,  0);
+    return _MAV_RETURN_uint32_t(msg,  12);
 }
 
 /**
@@ -456,7 +456,7 @@ static inline uint64_t mavlink_msg_camera_capture_status_get_video_bitrate(const
  */
 static inline uint16_t mavlink_msg_camera_capture_status_get_video_rotation(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  28);
+    return _MAV_RETURN_uint16_t(msg,  24);
 }
 
 /**
@@ -468,10 +468,10 @@ static inline uint16_t mavlink_msg_camera_capture_status_get_video_rotation(cons
 static inline void mavlink_msg_camera_capture_status_decode(const mavlink_message_t* msg, mavlink_camera_capture_status_t* camera_capture_status)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
-    camera_capture_status->video_bitrate = mavlink_msg_camera_capture_status_get_video_bitrate(msg);
     camera_capture_status->time_boot_ms = mavlink_msg_camera_capture_status_get_time_boot_ms(msg);
     camera_capture_status->image_interval = mavlink_msg_camera_capture_status_get_image_interval(msg);
     camera_capture_status->video_framerate = mavlink_msg_camera_capture_status_get_video_framerate(msg);
+    camera_capture_status->video_bitrate = mavlink_msg_camera_capture_status_get_video_bitrate(msg);
     camera_capture_status->image_resolution_h = mavlink_msg_camera_capture_status_get_image_resolution_h(msg);
     camera_capture_status->image_resolution_v = mavlink_msg_camera_capture_status_get_image_resolution_v(msg);
     camera_capture_status->video_resolution_h = mavlink_msg_camera_capture_status_get_video_resolution_h(msg);
