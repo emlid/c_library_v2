@@ -40,13 +40,13 @@ typedef struct __mavlink_camera_settings_t {
     "CAMERA_SETTINGS", \
     17, \
     {  { "time_boot_ms", NULL, MAVLINK_TYPE_UINT32_T, 0, 0, offsetof(mavlink_camera_settings_t, time_boot_ms) }, \
+         { "camera_id", NULL, MAVLINK_TYPE_UINT8_T, 0, 24, offsetof(mavlink_camera_settings_t, camera_id) }, \
+         { "exposure_mode", NULL, MAVLINK_TYPE_UINT8_T, 0, 25, offsetof(mavlink_camera_settings_t, exposure_mode) }, \
          { "aperture", NULL, MAVLINK_TYPE_FLOAT, 0, 4, offsetof(mavlink_camera_settings_t, aperture) }, \
          { "shutter_speed", NULL, MAVLINK_TYPE_FLOAT, 0, 8, offsetof(mavlink_camera_settings_t, shutter_speed) }, \
          { "iso_sensitivity", NULL, MAVLINK_TYPE_FLOAT, 0, 12, offsetof(mavlink_camera_settings_t, iso_sensitivity) }, \
          { "ev", NULL, MAVLINK_TYPE_FLOAT, 0, 16, offsetof(mavlink_camera_settings_t, ev) }, \
          { "white_balance", NULL, MAVLINK_TYPE_FLOAT, 0, 20, offsetof(mavlink_camera_settings_t, white_balance) }, \
-         { "camera_id", NULL, MAVLINK_TYPE_UINT8_T, 0, 24, offsetof(mavlink_camera_settings_t, camera_id) }, \
-         { "exposure_mode", NULL, MAVLINK_TYPE_UINT8_T, 0, 25, offsetof(mavlink_camera_settings_t, exposure_mode) }, \
          { "mode_id", NULL, MAVLINK_TYPE_UINT8_T, 0, 26, offsetof(mavlink_camera_settings_t, mode_id) }, \
          { "audio_recording", NULL, MAVLINK_TYPE_UINT8_T, 0, 27, offsetof(mavlink_camera_settings_t, audio_recording) }, \
          { "color_mode_id", NULL, MAVLINK_TYPE_UINT8_T, 0, 28, offsetof(mavlink_camera_settings_t, color_mode_id) }, \
@@ -63,13 +63,13 @@ typedef struct __mavlink_camera_settings_t {
     "CAMERA_SETTINGS", \
     17, \
     {  { "time_boot_ms", NULL, MAVLINK_TYPE_UINT32_T, 0, 0, offsetof(mavlink_camera_settings_t, time_boot_ms) }, \
+         { "camera_id", NULL, MAVLINK_TYPE_UINT8_T, 0, 24, offsetof(mavlink_camera_settings_t, camera_id) }, \
+         { "exposure_mode", NULL, MAVLINK_TYPE_UINT8_T, 0, 25, offsetof(mavlink_camera_settings_t, exposure_mode) }, \
          { "aperture", NULL, MAVLINK_TYPE_FLOAT, 0, 4, offsetof(mavlink_camera_settings_t, aperture) }, \
          { "shutter_speed", NULL, MAVLINK_TYPE_FLOAT, 0, 8, offsetof(mavlink_camera_settings_t, shutter_speed) }, \
          { "iso_sensitivity", NULL, MAVLINK_TYPE_FLOAT, 0, 12, offsetof(mavlink_camera_settings_t, iso_sensitivity) }, \
          { "ev", NULL, MAVLINK_TYPE_FLOAT, 0, 16, offsetof(mavlink_camera_settings_t, ev) }, \
          { "white_balance", NULL, MAVLINK_TYPE_FLOAT, 0, 20, offsetof(mavlink_camera_settings_t, white_balance) }, \
-         { "camera_id", NULL, MAVLINK_TYPE_UINT8_T, 0, 24, offsetof(mavlink_camera_settings_t, camera_id) }, \
-         { "exposure_mode", NULL, MAVLINK_TYPE_UINT8_T, 0, 25, offsetof(mavlink_camera_settings_t, exposure_mode) }, \
          { "mode_id", NULL, MAVLINK_TYPE_UINT8_T, 0, 26, offsetof(mavlink_camera_settings_t, mode_id) }, \
          { "audio_recording", NULL, MAVLINK_TYPE_UINT8_T, 0, 27, offsetof(mavlink_camera_settings_t, audio_recording) }, \
          { "color_mode_id", NULL, MAVLINK_TYPE_UINT8_T, 0, 28, offsetof(mavlink_camera_settings_t, color_mode_id) }, \

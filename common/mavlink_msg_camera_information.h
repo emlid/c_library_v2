@@ -36,16 +36,16 @@ typedef struct __mavlink_camera_information_t {
     "CAMERA_INFORMATION", \
     12, \
     {  { "time_boot_ms", NULL, MAVLINK_TYPE_UINT32_T, 0, 0, offsetof(mavlink_camera_information_t, time_boot_ms) }, \
+         { "camera_id", NULL, MAVLINK_TYPE_UINT8_T, 0, 24, offsetof(mavlink_camera_information_t, camera_id) }, \
+         { "camera_count", NULL, MAVLINK_TYPE_UINT8_T, 0, 25, offsetof(mavlink_camera_information_t, camera_count) }, \
+         { "vendor_name", NULL, MAVLINK_TYPE_UINT8_T, 32, 26, offsetof(mavlink_camera_information_t, vendor_name) }, \
+         { "model_name", NULL, MAVLINK_TYPE_UINT8_T, 32, 58, offsetof(mavlink_camera_information_t, model_name) }, \
          { "firmware_version", NULL, MAVLINK_TYPE_UINT32_T, 0, 4, offsetof(mavlink_camera_information_t, firmware_version) }, \
          { "focal_length", NULL, MAVLINK_TYPE_FLOAT, 0, 8, offsetof(mavlink_camera_information_t, focal_length) }, \
          { "sensor_size_h", NULL, MAVLINK_TYPE_FLOAT, 0, 12, offsetof(mavlink_camera_information_t, sensor_size_h) }, \
          { "sensor_size_v", NULL, MAVLINK_TYPE_FLOAT, 0, 16, offsetof(mavlink_camera_information_t, sensor_size_v) }, \
          { "resolution_h", NULL, MAVLINK_TYPE_UINT16_T, 0, 20, offsetof(mavlink_camera_information_t, resolution_h) }, \
          { "resolution_v", NULL, MAVLINK_TYPE_UINT16_T, 0, 22, offsetof(mavlink_camera_information_t, resolution_v) }, \
-         { "camera_id", NULL, MAVLINK_TYPE_UINT8_T, 0, 24, offsetof(mavlink_camera_information_t, camera_id) }, \
-         { "camera_count", NULL, MAVLINK_TYPE_UINT8_T, 0, 25, offsetof(mavlink_camera_information_t, camera_count) }, \
-         { "vendor_name", NULL, MAVLINK_TYPE_UINT8_T, 32, 26, offsetof(mavlink_camera_information_t, vendor_name) }, \
-         { "model_name", NULL, MAVLINK_TYPE_UINT8_T, 32, 58, offsetof(mavlink_camera_information_t, model_name) }, \
          { "lens_id", NULL, MAVLINK_TYPE_UINT8_T, 0, 90, offsetof(mavlink_camera_information_t, lens_id) }, \
          } \
 }
@@ -54,16 +54,16 @@ typedef struct __mavlink_camera_information_t {
     "CAMERA_INFORMATION", \
     12, \
     {  { "time_boot_ms", NULL, MAVLINK_TYPE_UINT32_T, 0, 0, offsetof(mavlink_camera_information_t, time_boot_ms) }, \
+         { "camera_id", NULL, MAVLINK_TYPE_UINT8_T, 0, 24, offsetof(mavlink_camera_information_t, camera_id) }, \
+         { "camera_count", NULL, MAVLINK_TYPE_UINT8_T, 0, 25, offsetof(mavlink_camera_information_t, camera_count) }, \
+         { "vendor_name", NULL, MAVLINK_TYPE_UINT8_T, 32, 26, offsetof(mavlink_camera_information_t, vendor_name) }, \
+         { "model_name", NULL, MAVLINK_TYPE_UINT8_T, 32, 58, offsetof(mavlink_camera_information_t, model_name) }, \
          { "firmware_version", NULL, MAVLINK_TYPE_UINT32_T, 0, 4, offsetof(mavlink_camera_information_t, firmware_version) }, \
          { "focal_length", NULL, MAVLINK_TYPE_FLOAT, 0, 8, offsetof(mavlink_camera_information_t, focal_length) }, \
          { "sensor_size_h", NULL, MAVLINK_TYPE_FLOAT, 0, 12, offsetof(mavlink_camera_information_t, sensor_size_h) }, \
          { "sensor_size_v", NULL, MAVLINK_TYPE_FLOAT, 0, 16, offsetof(mavlink_camera_information_t, sensor_size_v) }, \
          { "resolution_h", NULL, MAVLINK_TYPE_UINT16_T, 0, 20, offsetof(mavlink_camera_information_t, resolution_h) }, \
          { "resolution_v", NULL, MAVLINK_TYPE_UINT16_T, 0, 22, offsetof(mavlink_camera_information_t, resolution_v) }, \
-         { "camera_id", NULL, MAVLINK_TYPE_UINT8_T, 0, 24, offsetof(mavlink_camera_information_t, camera_id) }, \
-         { "camera_count", NULL, MAVLINK_TYPE_UINT8_T, 0, 25, offsetof(mavlink_camera_information_t, camera_count) }, \
-         { "vendor_name", NULL, MAVLINK_TYPE_UINT8_T, 32, 26, offsetof(mavlink_camera_information_t, vendor_name) }, \
-         { "model_name", NULL, MAVLINK_TYPE_UINT8_T, 32, 58, offsetof(mavlink_camera_information_t, model_name) }, \
          { "lens_id", NULL, MAVLINK_TYPE_UINT8_T, 0, 90, offsetof(mavlink_camera_information_t, lens_id) }, \
          } \
 }
